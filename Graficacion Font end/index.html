@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficación del Árbol Binario</title>
+    <link rel="stylesheet" href="Estilos.css">
+</head>
+<body>
+    <h1>Árbol Binario</h1>
+    
+    <div class="form-container">
+        <input type="number" id="nodoValor" placeholder="Valor del nodo" />
+        <button onclick="insertarNodo()">Insertar Nodo</button>
+    </div>
+
+
+    <div class="form-container">
+        <input type="number" id="nodoBuscar" placeholder="Buscar valor del nodo" />
+        <button onclick="buscarNodo()">Buscar Nodo</button>
+    </div>
+
+    <div class="form-container">
+        <input type="number" id="nodoEliminar" placeholder="Eliminar valor del nodo" />
+        <button onclick="eliminarNodo()">Eliminar Nodo</button>
+    </div>
+
+    <div class="buttons-container">
+        <button onclick="mostrarPreOrden()">Preorden</button>
+        <button onclick="mostrarOrden()">Orden</button>
+        <button onclick="mostrarPosorden()">Posorden</button>
+        <button onclick="mostrarPorNiveles()">Por Niveles</button>
+    </div>
+
+    <canvas id="arbolCanvas"></canvas>
+
+    <script src="Graficacion.js"></script>
+</body>
+</html>
