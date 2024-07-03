@@ -133,6 +133,17 @@ async function mostrarMinimo() {
     }
 }
 
+//Función para mostrar Maximo
+async function mostrarMaximo() {
+    const response = await fetch('http://localhost:53245/api/arbol/busmaxi');
+    if (response.ok) {
+        const data = await response.json();
+        alert(data);
+    } else {
+        alert('Error al mostrar el valor Maximo');
+    }
+}
+
 // Funciones para mostrar el árbol en diferentes órdenes
 async function mostrarPreOrden() {
     await inicializar('preorden');

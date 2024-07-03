@@ -177,7 +177,23 @@ namespace AplicacionArbol9B.DataAccess
             }
             return mensaje;
         }
-
+        public static string BuscarMaxi(Nodo nodo)
+        {
+            string mensaje = "";
+            if (nodo == null)
+            {
+                mensaje = "No hay elementos en el Árbol.";
+            }
+            else
+            {
+                while (nodo.Derecha != null)
+                {
+                    nodo = nodo.Derecha;
+                }
+                mensaje = $"El Árbol tiene un valor máximo de: {nodo.Numero}";
+            }
+            return mensaje;
+        }
         public static int AlturaNodo(Nodo n)
         {
             if (n != null)

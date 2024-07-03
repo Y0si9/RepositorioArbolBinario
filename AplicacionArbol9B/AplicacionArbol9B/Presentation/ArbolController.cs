@@ -151,6 +151,16 @@ namespace AplicacionArbol9B.Presentation
             return Ok(mensaje);
         }
 
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("api/arbol/busmaxi")]
+        public IHttpActionResult BuscarMaxi()
+        {
+            Servicios servicios = new Servicios();
+            string mensaje = servicios.BuscarMaxi();
+
+            return Ok(mensaje);
+        }
+
 
         private string ConvertirAJson(string recorrido)
         {

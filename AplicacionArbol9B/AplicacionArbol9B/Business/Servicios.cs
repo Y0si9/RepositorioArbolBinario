@@ -51,5 +51,10 @@ namespace AplicacionArbol9B.Business
             return Operaciones.BuscarMini(Operaciones.Root);
         }
 
+        public string BuscarMaxi()
+        {
+            return Operaciones.BuscarMaxi(Operaciones.Root);
+        }
+
     }
 }
