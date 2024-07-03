@@ -36,13 +36,6 @@ namespace AplicacionArbol9B.Business
             return Operaciones.PorNiveles(Operaciones.Root).Trim();
         }
 
-        //public void InsertarEnNodo(int numero, int valorPadre, bool aLaIzquierda)
-        //{
-        //    Nodo nuevo = new Nodo(numero);
-        //    Operaciones.InsertarEnNodo(Operaciones.Root, nuevo, valorPadre, aLaIzquierda);
-        //    Operaciones.Balanceo(nuevo);
-        //}
-
         public void Borrar(int num)
         {
             Operaciones.Root=Operaciones.Borrar(Operaciones.Root, num);
@@ -53,7 +46,10 @@ namespace AplicacionArbol9B.Business
             return Operaciones.Buscar(Operaciones.Root, valor);
         }
 
-
+        public string BuscarMini()
+        {
+            return Operaciones.BuscarMini(Operaciones.Root);
+        }
 
     }
 }

@@ -160,6 +160,23 @@ namespace AplicacionArbol9B.DataAccess
             return nodo;
         }
 
+        public static string BuscarMini(Nodo nodo)
+        {
+            string mensaje = "";
+            if (nodo == null)
+            {
+                mensaje = "No hay elementos en el Árbol.";
+            }
+            else
+            {
+                while (nodo.Izquierda != null)
+                {
+                    nodo = nodo.Izquierda;
+                }
+                mensaje = $"El Árbol tiene un valor minimo de: {nodo.Numero}";
+            }
+            return mensaje;
+        }
 
         public static int AlturaNodo(Nodo n)
         {

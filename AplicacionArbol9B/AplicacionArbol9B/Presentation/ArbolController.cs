@@ -102,36 +102,6 @@ namespace AplicacionArbol9B.Presentation
             }
         }
 
-        //[System.Web.Http.HttpPost]
-        //[System.Web.Http.Route("api/arbol/insertarennodo")]
-        //public IHttpActionResult InsertarEnNodo([FromBody] InsertarEnNodoRequest request)
-        //{
-        //    try
-        //    {
-        //        if (request == null)
-        //        {
-        //            return BadRequest("El cuerpo de la solicitud no puede estar vacío.");
-        //        }
-
-        //        Nodo nuevo = new Nodo(request.Numero);
-        //        bool insertado = Operaciones.InsertarEnNodo(Operaciones.Root, nuevo, request.ValorPadre, request.ALlaIzquierda);
-
-        //        if (insertado)
-        //        {
-        //            Operaciones.Balanceo(nuevo);
-        //            return Ok("Nodo insertado en el nodo especificado y balanceado.");
-        //        }
-        //        else
-        //        {
-        //            return NotFound();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return InternalServerError(ex);
-        //    }
-        //}
-
 
         [System.Web.Http.HttpDelete]
         [System.Web.Http.Route("api/arbol/eliminar/{valor}")]
@@ -171,14 +141,16 @@ namespace AplicacionArbol9B.Presentation
             }
         }
 
-        //[System.Web.Http.HttpGet]
-        //[System.Web.Http.Route("api/arbol/buscar")]
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("api/arbol/busmini")]
+        public IHttpActionResult BuscarMini()
+        {
+            Servicios servicios = new Servicios();
+            string mensaje = servicios.BuscarMini();
 
-        //public IHttpActionResult Buscar([FromBody] int id) 
-        //{ 
-        //    int resultado = arbolservicios.Buscar(id);
-        //    return Ok(resultado); 
-        //}
+            return Ok(mensaje);
+        }
+
 
         private string ConvertirAJson(string recorrido)
         {

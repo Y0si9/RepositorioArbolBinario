@@ -61,42 +61,6 @@ async function insertarNodo() {
     }
 }
 
-// Función para insertar un nodo en un nodo específico
-/*async function insertarEnNodo() {
-    const nodoValor = document.getElementById('nodoValorEnNodo').value;
-    const valorPadre = document.getElementById('valorPadre').value;
-    const lado = document.querySelector('input[name="lado"]:checked').value;
-
-    if (!nodoValor || !valorPadre) {
-        alert('Por favor ingrese todos los valores.');
-        return;
-    }
-
-    try {
-        const response = await fetch('http://localhost:53245/api/arbol/insertarEnNodo', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                numero: parseInt(nodoValor),
-                valorPadre: parseInt(valorPadre),
-                aLaIzquierda: lado === 'izquierda'
-            })
-        });
-
-        if (response.ok) {
-            alert('Nodo insertado en el nodo especificado y balanceado.');
-            inicializar('preorden'); // Volver a cargar el árbol para reflejar los cambios
-        } else {
-            alert('Error al insertar el nodo.');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Error al insertar el nodo.');
-    }
-}
-*/
 
 // Función para buscar un nodo en el árbol
 async function buscarNodo() {
@@ -155,6 +119,17 @@ async function eliminarNodo() {
     } catch (error) {
         console.error('Error:', error);
         alert('Error al eliminar el nodo.');
+    }
+}
+
+//Función para mostrar Minimo
+async function mostrarMinimo() {
+    const response = await fetch('http://localhost:53245/api/arbol/busmini');
+    if (response.ok) {
+        const data = await response.json();
+        alert(data);
+    } else {
+        alert('Error al mostrar el valor Minimo');
     }
 }
 
